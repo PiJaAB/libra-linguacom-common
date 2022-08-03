@@ -8,7 +8,8 @@ export interface PublicUser {
   settings?: never;
 }
 
-export interface PrivateUser extends Omit<PublicUser, 'private' | 'settings'> {
+export interface PrivateUser<Timestamp>
+  extends Omit<PublicUser, 'private' | 'settings'> {
   private: {
     email?: string;
     emailVerified: boolean;
@@ -25,5 +26,6 @@ export interface PrivateUser extends Omit<PublicUser, 'private' | 'settings'> {
     onboardingCompleted?: boolean;
     requisitionOn?: boolean;
     userType?: string[];
+    markedForDeletion: Timestamp;
   };
 }
