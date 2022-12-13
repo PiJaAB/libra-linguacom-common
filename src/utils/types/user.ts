@@ -19,7 +19,7 @@ export interface PrivateUser extends Omit<PublicUser, 'private' | 'settings'> {
     subscribedTopics?: string[];
     notificationKey?: string | null;
     premium?: boolean;
-    premiumIssuer?: 'MANULLY' | 'APPLE' | 'GOOGLE';
+    premiumIssuer?: 'MANUALLY' | 'APPLE' | 'GOOGLE';
     premiumEndDate?: Date; // Generic type that takes type parameter named Timestamp instead (see receipt as an example)?
   };
   settings?: {
