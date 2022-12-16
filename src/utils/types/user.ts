@@ -7,7 +7,8 @@ export interface PublicUser {
   private?: never;
   settings?: never;
 }
-export interface PrivateUser<Timestamp> extends Omit<PublicUser, 'private' | 'settings'> {
+export interface PrivateUser<Timestamp>
+  extends Omit<PublicUser, 'private' | 'settings'> {
   private: {
     email?: string;
     emailVerified: boolean;
