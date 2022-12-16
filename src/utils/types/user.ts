@@ -7,7 +7,7 @@ export interface PublicUser {
   private?: never;
   settings?: never;
 }
-export interface PrivateUser extends Omit<PublicUser, 'private' | 'settings'> {
+export interface PrivateUser<Timestamp> extends Omit<PublicUser, 'private' | 'settings'> {
   private: {
     email?: string;
     emailVerified: boolean;
@@ -20,7 +20,7 @@ export interface PrivateUser extends Omit<PublicUser, 'private' | 'settings'> {
     notificationKey?: string | null;
     premium?: boolean;
     premiumIssuer?: 'MANUALLY' | 'APPLE' | 'GOOGLE';
-    premiumEndDate?: Date; // Generic type that takes type parameter named Timestamp instead (see receipt as an example)?
+    premiumEndDate?: Timestamp; // Generic type that takes type parameter named Timestamp instead (see receipt as an example)?
   };
   settings?: {
     interpreterNumber?: string;
