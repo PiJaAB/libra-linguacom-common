@@ -2,6 +2,7 @@ export interface PublicUser {
   profilePictureHash?: string | null;
   name?: string;
   userLanguages?: string[];
+  languages?: string[];
   username?: string;
   role?: string;
   private?: never;
