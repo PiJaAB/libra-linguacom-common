@@ -13,6 +13,8 @@ export interface BaseAssignmentDetail {
   assignmentNumber: string;
   customer: string;
   languageId?: string;
+  fromLanguageId?: string;
+  toLanguageId?: string;
 }
 
 export interface G_RequisitionDetails<Timestamp> {
