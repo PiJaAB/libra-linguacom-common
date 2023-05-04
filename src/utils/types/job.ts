@@ -1,3 +1,12 @@
+type WithId<T> = T & { id: string };
+type Language = {
+  isArchived?: boolean;
+  swedish?: string;
+  english?: string;
+  native?: string;
+  ISO639_1?: string;
+};
+
 export type JobType = 'interpreter' | 'translator';
 export type InterpreterCategory = 'Video' | 'Phone' | 'InSitu';
 
@@ -12,9 +21,9 @@ export interface BaseAssignmentDetail {
   mediator: string;
   assignmentNumber: string;
   customer: string;
-  languageId?: string;
-  fromLanguageId?: string;
-  toLanguageId?: string;
+  language?: WithId<Language>;
+  fromLanguage?: WithId<Language>;
+  toLanguage?: WithId<Language>;
 }
 
 export interface G_RequisitionDetails<Timestamp> {
