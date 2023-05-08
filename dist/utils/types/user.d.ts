@@ -1,0 +1,32 @@
+export interface PublicUser {
+    profilePictureHash?: string | null;
+    name?: string;
+    userLanguages?: string[];
+    languages?: string[];
+    username?: string;
+    role?: string;
+    private?: never;
+    settings?: never;
+}
+export interface PrivateUser<Timestamp> extends Omit<PublicUser, 'private' | 'settings'> {
+    private: {
+        email?: string;
+        emailVerified: boolean;
+        phoneNumber?: string;
+        accessFlags?: Partial<Record<string, boolean>> | null;
+        tempPassword?: boolean;
+        disabled: boolean;
+        deviceTokens?: string[];
+        subscribedTopics?: string[];
+        notificationKey?: string | null;
+        premium?: boolean;
+        premiumIssuer?: 'MANUALLY' | 'APPLE' | 'GOOGLE';
+        premiumEndDate?: Timestamp;
+    };
+    settings?: {
+        interpreterNumber?: string;
+        onboardingCompleted?: boolean;
+        requisitionOn?: boolean;
+        userType?: string[];
+    };
+}
