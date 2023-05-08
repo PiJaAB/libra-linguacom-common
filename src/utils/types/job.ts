@@ -12,7 +12,7 @@ export interface BaseAssignmentDetail {
   mediator: string;
   assignmentNumber: string;
   customer: string;
-  languageId?: string;
+  languageId?: string | null;
   fromLanguageId?: string;
   toLanguageId?: string;
 }
